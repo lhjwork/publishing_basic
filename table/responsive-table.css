@@ -35,8 +35,17 @@ body {
 /* CSS Nesting 문법을 사용 함 */
 
 .table {
+    /*  table 반응형에서 colgroup은 무조건 display: none 을 해야한다.  */
+    & colgroup {
+        @media (width < 1000px) {
+            display: none;
+        }
+    }
     & thead {
         background:#666;
+        @media(width < 1000px) {
+            display: none;
+        }
         & th {
             color: #FFF;
             font-size: 1.4rem;
@@ -48,7 +57,6 @@ body {
         }
     }
     & tbody {
-   
         & td {
             padding:2rem 0;
             color:#666;
