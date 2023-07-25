@@ -1,0 +1,65 @@
+*{
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+
+html {
+    font-size: 62.5%;
+    /*  62.5% 는 10px에 해당함 */
+}
+
+body {
+    font-size: 1rem;
+}
+caption {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    border:0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1);
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+body {
+    padding: 50px;
+}
+
+/* CSS Nesting 문법을 사용 함 */
+
+.table {
+    & thead {
+        background:#666;
+        & th {
+            color: #FFF;
+            font-size: 1.4rem;
+            font-weight: 700;
+            height: 6rem;
+            + th {
+                border-left:1px solid  #e1e1e1;
+            }
+        }
+    }
+    & tbody {
+   
+        & td {
+            padding:2rem 0;
+            color:#666;
+            font-size :1.6rem;
+         
+            /* td의 형제는 -> + */
+            border-bottom: 1px solid #e1e1e1 ;
+            + td {
+                border-left: 1px solid #e1e1e1 ;
+                text-align: center;
+            }
+        }
+    }
+}
