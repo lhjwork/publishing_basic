@@ -66,16 +66,53 @@ body {
             border-bottom: 1px solid #e1e1e1 ;
             @media(width < 1000px) {
                 /* td가 display block이 되면 block은 밑으로 떨어짐 */
-                display: block;
+                display: grid;
+                grid-template-columns: 12rem 1fr;
+                grid-template-rows: minmax(8rem auto);
+                align-items: center;
+                gap:0 2rem;
                 text-align: left;
-                padding: 2.2rem 0;
+                padding: 0;
                 border-bottom: 1px solid #e1e1e1 ;
+                font-size: 2.4rem;
+                background: linear-gradient(to right, #666, #666 12rem, #fff 12rem);
+                &::before {
+                    align-self: center;
+                    text-align: center;
+                    background:#666;
+                    color: #fff;
+                    font-size: 2.2rem;
+
+                }
+                &:nth-child(1)::before{
+                    content: attr(data-text);
+                }
+                &:nth-child(2)::before{
+                    content: '형태';
+                }
+                &:nth-child(3)::before{
+                    content: '운영방안';
+                }
+                &:nth-child(4)::before{
+                    content: '피고';
+                }
+               
 
             }
             + td {
                 border-left: 1px solid #e1e1e1 ;
                 @media(width < 1000px) {
                     border-left: none;
+                }
+            }
+        }
+        @media(width < 1000px) {
+            & tr {
+                display: block;
+                border-top: 1px solid #e1e1e1 ;
+                + tr {
+                
+                    margin-top: 2rem;
                 }
             }
         }
