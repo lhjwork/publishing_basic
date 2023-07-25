@@ -61,12 +61,22 @@ body {
             padding:2rem 0;
             color:#666;
             font-size :1.6rem;
-         
+            text-align: center;
             /* td의 형제는 -> + */
             border-bottom: 1px solid #e1e1e1 ;
+            @media(width < 1000px) {
+                /* td가 display block이 되면 block은 밑으로 떨어짐 */
+                display: block;
+                text-align: left;
+                padding: 2.2rem 0;
+                border-bottom: 1px solid #e1e1e1 ;
+
+            }
             + td {
                 border-left: 1px solid #e1e1e1 ;
-                text-align: center;
+                @media(width < 1000px) {
+                    border-left: none;
+                }
             }
         }
     }
